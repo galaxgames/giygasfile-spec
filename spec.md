@@ -31,7 +31,7 @@ Version 0
 #### Primary Structure Descriptions
 | Name | Description|
 |-|-|
-| magic numbers | will always represent the ascii string `giygas  `. |
+| magic numbers | will always represent the ascii string `giygas` (with two spaces at the end). |
 | version code | The version of the format encoded. (See top of document) |
 | object (repeated) | The data objects composing the file. 
 
@@ -43,7 +43,8 @@ Version 0
 
 
 ### Tag Types
-These tags define different types of data that can be encoded within a giygasfile
+These tags define different types of data that can be encoded within a giygasfile.
+
 | Name                        | Value |
 |-----------------------------|-------|
 | Vertex Buffer               | 0     |
@@ -57,6 +58,8 @@ These tags define different types of data that can be encoded within a giygasfil
 | data                               |          size | unsigned char[size] |
 
 #### Vertex Buffer Descriptions
+| Name | Description|
+|-|-|
 | size | The size in bytes of the vetex buffer data. |
 | data | Raw vertex buffer data |
 
@@ -100,6 +103,7 @@ These tags define different types of data that can be encoded within a giygasfil
 
 #### Attribute Definition Descriptions
 Note: The attribute offset is determined by the component size and count of the previously encoded attribute definitions. This may change in a future version.
+
 | Name | Description|
 |-|-|
 | component size | The byte size of each vertex component defined by this attribute |
