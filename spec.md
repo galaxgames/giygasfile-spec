@@ -84,10 +84,12 @@ These tags define different types of data that can be encoded within a giygasfil
 |-------------------------------------|--------------|----------------|
 | layout count                        |            2 | unsigned short |
 | vertex buffer layout (repeated)     |              |                |
-| - attribute count                 |            2 | unsigned short |
-| - attribute definition (repeated) |              |                |
-| - - component size              |            1 | unsigned char  |
-| - - component count             |            1 | unsigned char  |
+| - attribute count                   |            2 | unsigned short |
+| - attribute definition (repeated)   |              |                |
+| - - component size                  |            1 | unsigned char  |
+| - - component count                 |            1 | unsigned char  |
+| - - component offset                |            1 | unsigned char  |
+| - - attribute usage hint            |            1 | unsigned char  |
 
 #### Vertex Attribute Definition Descriptions
 | Name | Description|
@@ -102,10 +104,22 @@ These tags define different types of data that can be encoded within a giygasfil
 | attribute definition (repeated) | The definitions of each attribute |
 
 #### Attribute Definition Descriptions
-Note: The attribute offset is determined by the component size and count of the previously encoded attribute definitions. This may change in a future version.
-
 | Name | Description|
 |-|-|
 | component size | The byte size of each vertex component defined by this attribute |
 | component count | The count of vertex componenets this vertex attribute contains (e.g. 1 -> single, 2 -> Vector2, 3 -> Vector3, and so on)|
+| component offset | The byte offset into the vertex buffer that this attribute starts at |
+| attribute usage hint | A hint for the usage of the attribe. See below for possible values |
+
+
+### Attribute Usage Hint Values
+The following attribute usage hint values are defined.
+
+| Name                        | Value |
+|-----------------------------|-------|
+| No Hint                     | 0     |
+| Position                    | 1     |
+| Color                       | 2     |
+| Normals                     | 3     |
+| Texture Coordinates 0-3     | 4-7   |
 
