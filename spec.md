@@ -85,10 +85,11 @@ These tags define different types of data that can be encoded within a giygasfil
 | layout count                        |            2 | unsigned short |
 | vertex buffer layout (repeated)     |              |                |
 | - attribute count                   |            2 | unsigned short |
+| - stride                            |            2 | unsigned short |
 | - attribute definition (repeated)   |              |                |
 | - - component size                  |            1 | unsigned char  |
 | - - component count                 |            1 | unsigned char  |
-| - - component offset                |            1 | unsigned char  |
+| - - offset                          |            1 | unsigned char  |
 | - - attribute usage hint            |            1 | unsigned char  |
 
 #### Vertex Attribute Definition Descriptions
@@ -101,6 +102,7 @@ These tags define different types of data that can be encoded within a giygasfil
 | Name | Description|
 |-|-|
 | attribute count | The count of attribute definition objects encoded |
+| attribute stride | The stride in bytes for each attribute |
 | attribute definition (repeated) | The definitions of each attribute |
 
 #### Attribute Definition Descriptions
@@ -108,7 +110,7 @@ These tags define different types of data that can be encoded within a giygasfil
 |-|-|
 | component size | The byte size of each vertex component defined by this attribute |
 | component count | The count of vertex componenets this vertex attribute contains (e.g. 1 -> single, 2 -> Vector2, 3 -> Vector3, and so on)|
-| component offset | The byte offset into the vertex buffer that this attribute starts at |
+| offset | The byte offset into the vertex buffer that this attribute starts at |
 | attribute usage hint | A hint for the usage of the attribe. See below for possible values |
 
 
